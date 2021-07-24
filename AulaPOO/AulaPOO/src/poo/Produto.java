@@ -1,15 +1,14 @@
 package poo;
 
-public class ProdutoPoo {
-	public class Produto {
+public class Produto {
 
-		private Long id;
+		private String id;
 		private String nome;
 		private Double valor;
-		public Long getId() {
+		public String getId() {
 			return id;
 		}
-		public void setId(Long id) {
+		public void setId(String id) {
 			this.id = id;
 		}
 		public String getNome() {
@@ -24,8 +23,13 @@ public class ProdutoPoo {
 		public void setValor(Double valor) {
 			this.valor = valor;
 		}
+		@Override
+		public String toString() {
+			return "Produto [id=" + id + ", nome=" + nome + ", valor=" + valor + "]";
+		}
+		
 		
 		
 	}
 
-}
+

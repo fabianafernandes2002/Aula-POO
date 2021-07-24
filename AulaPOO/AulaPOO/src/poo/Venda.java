@@ -1,10 +1,12 @@
+package poo;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Venda {
 	
-	private Long id;
+	private String id;
 	private String descricaoVenda;
 	private String nomeCliente;
 	private String enderecoEntrega;
@@ -12,11 +14,22 @@ public class Venda {
 	
 	
 	private List<Produto> listaProdutos = new ArrayList<Produto>();
-
-	public Long getId() {
+	public List<Produto> getListaProdutos() {
+		return listaProdutos;
+	}
+	
+	public double totalVenda() {
+		double total = 0.0;
+		for (Produto produto : listaProdutos) {
+			total += produto.getValor().doubleValue();
+		}
+		return total;
+	}
+	
+	public String getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(String ID) {
 		this.id = id;
 	}
 	public String getDescricaoVenda() {
@@ -45,4 +58,15 @@ public class Venda {
 		this.valorTotal = valorTotal;
 	}
 	
+	@Override
+	public String toString() {
+		return "VendaPoo [id=" + id + ", descricaoVenda=" + descricaoVenda + ", nomeCliente=" + nomeCliente
+				+ ", enderecoEntrega=" + enderecoEntrega + ", valorTotal=" + valorTotal + ", listaProdutos="
+				+ listaProdutos + ", getId()=" + getId() + ", getDescricaoVenda()=" + getDescricaoVenda()
+				+ ", getNomeCliente()=" + getNomeCliente() + ", getEnderecoEntrega()=" + getEnderecoEntrega()
+				+ ", getValorTotal()=" + getValorTotal() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
+	}
+	
 }
+
